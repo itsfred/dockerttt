@@ -25,7 +25,7 @@ function configReplace() {
 # not empty: grep -q '[^[:space:]]' < 'server.cfg' && echo "not empty"
 if [ ! -e "${SERVER_PATH}/garrysmod/cfg/server.cfg" ] || [ "0" = "$(grep -o '[^[:space:]]' "${SERVER_PATH}/garrysmod/cfg/server.cfg" | wc -l)" ]; then
 	mkdir -p "${SERVER_PATH}/garrysmod/cfg"
-	wget -O "${SERVER_PATH}/garrysmod/cfg/server.cfg" "https://raw.githubusercontent.com/jusito/docker-ttt/master/server.cfg"
+	wget -O "${SERVER_PATH}/garrysmod/cfg/server.cfg" "https://raw.githubusercontent.com/itsfred/dockerttt/master/server.cfg"
 	chown "$USER_ID:$GROUP_ID" "${SERVER_PATH}/garrysmod/cfg/server.cfg"
 	chmod u+rw "${SERVER_PATH}/garrysmod/cfg/server.cfg"
 fi

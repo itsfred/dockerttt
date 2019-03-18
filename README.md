@@ -6,13 +6,24 @@ GMOD TTT server image, https://hub.docker.com/r/jusito/
 Docker Run example  
 server.cfg  
 scripts which are using jusito's git repository - to use mine ! If you want to install it on your own change it or live with my settings  
+  
+
+## What I want to add in the future  
+DockerCompose file
+server start stop action
+sec-check if colleciton is working with collID
+sec-check if server is up - start errors write into dockerLog cmd  
 
 ## run example
 
 --> htbc  
 ```
 docker run -d -p 27015:27015/tcp -p 27015:27015/udp -e WORKSHOP_COLLECTION_ID=123456 -e INSTALL_CSS=true "jusito/docker-ttt" +host_workshop_collection 123456 +map ttt_rooftops_2016_v1 -maxplayers
+```  
+  
 ```
+docker run -d -p 27015:27015/tcp -p 27015:27015/udp -e WORKSHOP_COLLECTION_ID=<yourCollIdFromSteam> -e INSTALL_CSS=true "jusito/docker-ttt" -usercon +rcon_password "<password>"+host_workshop_collection <yourCollIdFromSteam> +map <mapName> -maxplayers <number>
+```  
 
 tcp port for rcon, if you want to use it start with -usercon +rcon_password "yourPW"  
 
